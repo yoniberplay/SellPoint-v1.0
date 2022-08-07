@@ -45,6 +45,8 @@ namespace ProgramacionII
             if (circularProgressBar1.Value == 100)
             {
                 timer1.Enabled = false;
+                new loggin().Show();
+                this.Hide();
             }
         }
     }
