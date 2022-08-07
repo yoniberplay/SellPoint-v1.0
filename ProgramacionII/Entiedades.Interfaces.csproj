@@ -65,6 +65,12 @@
     <Compile Include="loggin.Designer.cs">
       <DependentUpon>loggin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoEntidades.Designer.cs">
+      <DependentUpon>MantenimientoEntidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loggin.resx">
       <DependentUpon>loggin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoEntidades.resx">
+      <DependentUpon>MantenimientoEntidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

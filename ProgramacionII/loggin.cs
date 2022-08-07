@@ -51,7 +51,10 @@ namespace ProgramacionII
                 }
                 else
                 {
-                 MessageBox.Show("Datos incorrectos.");
+                    MantenimientoEntidades mantenimiento = new MantenimientoEntidades(txtUsername.Text, txtPassword.Text);
+                    mantenimiento.Show();
+                    this.Hide();
+                    //MessageBox.Show("Datos incorrectos.");
                 }
 
             }
@@ -66,6 +69,12 @@ namespace ProgramacionII
         private void label4_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
