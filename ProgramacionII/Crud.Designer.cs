@@ -40,6 +40,8 @@
             // 
             // tabla
             // 
+            this.tabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Location = new System.Drawing.Point(12, 90);
             this.tabla.Name = "tabla";
@@ -70,6 +72,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -79,6 +82,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 

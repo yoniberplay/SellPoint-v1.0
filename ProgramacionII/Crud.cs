@@ -37,6 +37,19 @@ namespace ProgramacionII
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantenimientoEntidades me = new MantenimientoEntidades();
+            me.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MantenimientoEntidades me = new MantenimientoEntidades();
+            me.button1.Text = "Actualizar";
+            me.Show();
+        }
     }
 }

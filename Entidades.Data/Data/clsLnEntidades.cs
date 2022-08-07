@@ -39,6 +39,8 @@ public class clsLnEntidades {
 			throw ex;
 		}
 	}
+
+
 			public int Insertar(ref clsBeEntidades oBeEntidades) {
 				try 
 				{
@@ -46,13 +48,13 @@ public class clsLnEntidades {
 			 
 					SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
 					SqlCommand cmd = new SqlCommand(sp, cnn);
-			
+					cmd.CommandType = CommandType.StoredProcedure;
+
+
 					int rowsAffected = 0;
 					cnn.Open();
-			
-					cmd.Parameters.Add(new SqlParameter("@IDENTIDAD", oBeEntidades.IdEntidad));
-					cmd.Parameters["@IDENTIDAD"].Direction = ParameterDirection.Output;
-					cmd.Parameters.Add(new SqlParameter("@DESCRIPCION", oBeEntidades.Descripcion));
+
+					cmd.Parameters.Add(new SqlParameter("@Descripcion", oBeEntidades.Descripcion));						
 					cmd.Parameters.Add(new SqlParameter("@DIRECCION", oBeEntidades.Direccion));
 					cmd.Parameters.Add(new SqlParameter("@LOCALIDAD", oBeEntidades.Localidad));
 					cmd.Parameters.Add(new SqlParameter("@TIPOENTIDAD", oBeEntidades.TipoEntidad));
@@ -74,9 +76,9 @@ public class clsLnEntidades {
 					cmd.Parameters.Add(new SqlParameter("@ESTATUS", oBeEntidades.Estatus));
 					cmd.Parameters.Add(new SqlParameter("@NOELIMINABLE", oBeEntidades.NoEliminable));
 					cmd.Parameters.Add(new SqlParameter("@FECHAREGISTRO", oBeEntidades.FechaRegistro));
-			
 					rowsAffected = cmd.ExecuteNonQuery();
-					oBeEntidades.IdEntidad = Convert.ToInt32(cmd.Parameters["@IDENTIDAD"].Value.ToString());
+					
+
 			
 					return rowsAffected;
 			

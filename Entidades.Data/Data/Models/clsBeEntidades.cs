@@ -15,7 +15,7 @@ namespace Entidades.capas.Data.Models
 		private string mLocalidad = "";
 		private string mTipoEntidad = "";
 		private string mTipoDocumento = "";
-		private int mNumeroDocumento = 0;
+		private string mNumeroDocumento = "0";
 		private string mTeléfonos = "";
 		private string mURLPaginaWeb = "";
 		private string mURLFacebook = "";
@@ -24,13 +24,13 @@ namespace Entidades.capas.Data.Models
 		private string mURLTikTok = "";
 		private string mCodigoPostal = "";
 		private string mCoordenadasGPS = "";
-		private int mLimiteCredito = 0;
+		private string mLimiteCredito = "0";
 		private string mUserNameEntidad = "";
 		private string mPassworEntidad = "";
 		private string mRolUserEntidad = "";
 		private string mComentario = "";
 		private string mEstatus = "";
-		private bool mNoEliminable = false;
+		private int mNoEliminable = 0;
 		private string mFechaRegistro = DateTime.Now.ToString();
 
 		public int IdEntidad
@@ -105,7 +105,7 @@ namespace Entidades.capas.Data.Models
 			}
 		}
 
-		public int NumeroDocumento
+		public string NumeroDocumento
 		{
 			get
 			{
@@ -213,7 +213,7 @@ namespace Entidades.capas.Data.Models
 			}
 		}
 
-		public int LimiteCredito
+		public string LimiteCredito
 		{
 			get
 			{
@@ -285,7 +285,7 @@ namespace Entidades.capas.Data.Models
 			}
 		}
 
-		public Boolean NoEliminable
+		public int NoEliminable
 		{
 			get
 			{
@@ -313,7 +313,7 @@ namespace Entidades.capas.Data.Models
 		{
 		}
 
-		public clsBeEntidades(ref int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Teléfonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, string CodigoPostal, string CoordenadasGPS, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, bool NoEliminable, string FechaRegistro)
+		public clsBeEntidades(ref int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, string NumeroDocumento, string Teléfonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, string CodigoPostal, string CoordenadasGPS, string LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
 		{
 			mIdEntidad = IdEntidad;
 			mDescripcion = Descripcion;
@@ -338,6 +338,37 @@ namespace Entidades.capas.Data.Models
 			mEstatus = Estatus;
 			mNoEliminable = NoEliminable;
 			mFechaRegistro = FechaRegistro;
+		}
+
+		//Constructor para registro de nuevas entidades
+		public clsBeEntidades(ref string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento,
+			string NumeroDocumento, string Teléfonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, 
+			string URLTwitter, string URLTikTok, string CodigoPostal, string CoordenadasGPS, string LimiteCredito, 
+			string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable)
+		{
+			
+			mDescripcion = Descripcion;
+			mDireccion = Direccion;
+			mLocalidad = Localidad;
+			mTipoEntidad = TipoEntidad;
+			mTipoDocumento = TipoDocumento;
+			mNumeroDocumento = NumeroDocumento;
+			mTeléfonos = Teléfonos;
+			mURLPaginaWeb = URLPaginaWeb;
+			mURLFacebook = URLFacebook;
+			mURLInstagram = URLInstagram;
+			mURLTwitter = URLTwitter;
+			mURLTikTok = URLTikTok;
+			mCodigoPostal = CodigoPostal;
+			mCoordenadasGPS = CoordenadasGPS;
+			mLimiteCredito = LimiteCredito;
+			mUserNameEntidad = UserNameEntidad;
+			mPassworEntidad = PassworEntidad;
+			mRolUserEntidad = RolUserEntidad;
+			mComentario = Comentario;
+			mEstatus = Estatus;
+			mNoEliminable = NoEliminable;
+			
 		}
 
 		public object Clone()
