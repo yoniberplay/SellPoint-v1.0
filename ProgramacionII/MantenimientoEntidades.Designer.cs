@@ -578,7 +578,7 @@
         }
 
         #endregion
-
+        public string identidad = "0";
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox textBoxLocalidad;
         public System.Windows.Forms.Label label3;

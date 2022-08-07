@@ -9,7 +9,7 @@ namespace Entidades.capas.Data.Models
 	public class clsBeEntidades : ICloneable
 	{
 
-		private int mIdEntidad = 0;
+		private string mIdEntidad = "0";
 		private string mDescripcion = "";
 		private string mDireccion = "";
 		private string mLocalidad = "";
@@ -33,7 +33,7 @@ namespace Entidades.capas.Data.Models
 		private int mNoEliminable = 0;
 		private string mFechaRegistro = DateTime.Now.ToString();
 
-		public int IdEntidad
+		public string IdEntidad
 		{
 			get
 			{
@@ -313,7 +313,7 @@ namespace Entidades.capas.Data.Models
 		{
 		}
 
-		public clsBeEntidades(ref int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, string NumeroDocumento, string Teléfonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, string CodigoPostal, string CoordenadasGPS, string LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+		public clsBeEntidades(ref string IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, string NumeroDocumento, string Teléfonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, string CodigoPostal, string CoordenadasGPS, string LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
 		{
 			mIdEntidad = IdEntidad;
 			mDescripcion = Descripcion;

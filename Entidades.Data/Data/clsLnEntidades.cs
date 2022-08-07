@@ -96,7 +96,7 @@ public class clsLnEntidades {
 			
 					SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
 					SqlCommand cmd = new SqlCommand(sp, cnn);
-			
+					cmd.CommandType = CommandType.StoredProcedure;
 					int rowsAffected = 0;
 					cnn.Open();
 			
@@ -134,18 +134,20 @@ public class clsLnEntidades {
 				}
 			}
 
-			public int Eliminar(ref clsBeEntidades oBeEntidades) 
+			public int Eliminar(ref String id) 
 			{
 				try {
 					string sp = "SpEntidadesEliminar";
 			
 					SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
 					SqlCommand cmd = new SqlCommand(sp, cnn);
-			
+					cmd.CommandType = CommandType.StoredProcedure;
+
+
 					int rowsAffected = 0;
-					cnn.Open();
+							cnn.Open();
 			
-					cmd.Parameters.Add(new SqlParameter("@IDENTIDAD", oBeEntidades.IdEntidad));
+					cmd.Parameters.Add(new SqlParameter("@IDENTIDAD", id));
 			
 					rowsAffected = cmd.ExecuteNonQuery();
 			

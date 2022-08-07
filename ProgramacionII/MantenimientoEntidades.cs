@@ -43,10 +43,11 @@ namespace ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Boolean cond = false;
 
             if (button1.Text == "Guardar")
             {
-                 Boolean cond = false;
+                 
             cond = validar();
             if (cond)
             {
@@ -55,7 +56,12 @@ namespace ProgramacionII
             }
             }else if(button1.Text == "Actualizar")
             {
-                MessageBox.Show("Actualizar");
+                cond = validar();
+                if (cond)
+                {
+                    this.Hide();
+                    
+                }
             }
             
            
@@ -109,15 +115,24 @@ namespace ProgramacionII
                 }
                 else
                 {
-                    clsBeEntidades clsBeEntidades = new clsBeEntidades(ref descripcion, direccion, localidad, comboentidad.Text
-                , documento,textBoxnumerodocumento.Text, telefono, web, facebook, instagram, twitter, tiktok,
+                        clsBeEntidades clsBeEntidades = new clsBeEntidades(ref descripcion, direccion, localidad, comboentidad.Text
+                , combodocumento.Text, documento, telefono, web, facebook, instagram, twitter, tiktok,
                postalcode, gps, textBoxLimiteCredito.Text, usuario, clave, comboroluser.Text, comentario, combostatus.Text,
                 condeliminable);
 
                     clsLnEntidades clsLnEntidades = new clsLnEntidades();
-                    clsLnEntidades.Insertar(ref clsBeEntidades);
-                    MessageBox.Show("Entiedad guardada, satisfactoriamente.!","Registro Exitoso.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cond = true;
+                    if (button1.Text == "Actualizar")
+                    {
+                        clsBeEntidades.IdEntidad = identidad;
+                        clsLnEntidades.Actualizar(ref clsBeEntidades);
+                        cond = true;
+                    }
+                    else
+                    {
+                        clsLnEntidades.Insertar(ref clsBeEntidades);
+                        MessageBox.Show("Entidad guardada, satisfactoriamente.!", "Registro Exitoso.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cond = true;
+                    }
                 }
 
                 

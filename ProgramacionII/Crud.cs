@@ -49,7 +49,46 @@ namespace ProgramacionII
         {
             MantenimientoEntidades me = new MantenimientoEntidades();
             me.button1.Text = "Actualizar";
-            me.Show();
+            
+            me.identidad = tabla.CurrentRow.Cells[0].Value.ToString();
+            me.textBoxdescripcion.Text = tabla.CurrentRow.Cells[1].Value.ToString();
+            me.textBoxdireccion.Text = tabla.CurrentRow.Cells[2].Value.ToString();
+            me.textBoxLocalidad.Text = tabla.CurrentRow.Cells[3].Value.ToString();
+            me.comboentidad.Text = tabla.CurrentRow.Cells[4].Value.ToString();
+            me.combodocumento.Text = tabla.CurrentRow.Cells[5].Value.ToString();
+            me.textBoxnumerodocumento.Text = tabla.CurrentRow.Cells[6].Value.ToString();
+            me.textBoxtelefono.Text = tabla.CurrentRow.Cells[7].Value.ToString();
+            me.textBoxpaginaweb.Text = tabla.CurrentRow.Cells[8].Value.ToString();
+            me.textBoxFacebook.Text = tabla.CurrentRow.Cells[9].Value.ToString();
+            me.textBoxInstagram.Text = tabla.CurrentRow.Cells[10].Value.ToString();
+            me.textBoxTwitter.Text = tabla.CurrentRow.Cells[11].Value.ToString();
+            me.textBoxTiktok.Text = tabla.CurrentRow.Cells[12].Value.ToString();
+            me.textBoxpostalcode.Text = tabla.CurrentRow.Cells[13].Value.ToString();
+            me.textBoxgps.Text = tabla.CurrentRow.Cells[14].Value.ToString();
+            me.textBoxLimiteCredito.Text = tabla.CurrentRow.Cells[15].Value.ToString();
+            me.textBoxUsuario.Text = tabla.CurrentRow.Cells[16].Value.ToString();
+            me.textBoxClave.Text = tabla.CurrentRow.Cells[17].Value.ToString();
+            me.comboroluser.Text = tabla.CurrentRow.Cells[18].Value.ToString();
+            me.textcomentario.Text = tabla.CurrentRow.Cells[19].Value.ToString();
+            me.combostatus.Text = tabla.CurrentRow.Cells[20].Value.ToString();
+
+            String temp = tabla.CurrentRow.Cells[21].Value.ToString();
+            if(temp == "True")
+            {
+                me.checkBoxEliminable.Checked = true;
+            }
+            else { me.checkBoxEliminable.Checked = false; }
+     
+            me.ShowDialog();
+            ListarEntidades();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String id = tabla.CurrentRow.Cells[0].Value.ToString();
+            new clsLnEntidades().Eliminar(ref id);
+
+            ListarEntidades();
         }
     }
 }
