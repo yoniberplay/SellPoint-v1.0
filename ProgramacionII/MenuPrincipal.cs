@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.capas.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,16 @@ namespace ProgramacionII
     {
         private int childFormNumber = 0;
 
-        public MenuPrincipal()
+        public MenuPrincipal(String usuario)
         {
             InitializeComponent();
+            clsLnEntidades cl = new clsLnEntidades();
+            clsBeEntidades bc = cl.UsuarioConectado(usuario);
+            label1.Text = bc.UserNameEntidad;
+            label2.Text = bc.Localidad;
+            labelstatus.Text = bc.UserNameEntidad +" Conectado.  "+ DateTime.Now.ToString("h:mm:ss dd/MM/yyyy"); 
+
+
         }
 
         private void ShowNewForm(object sender, EventArgs e)

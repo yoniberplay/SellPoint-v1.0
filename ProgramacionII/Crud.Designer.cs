@@ -40,11 +40,19 @@
             // 
             // tabla
             // 
+            this.tabla.AllowUserToAddRows = false;
+            this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AllowUserToResizeColumns = false;
+            this.tabla.AllowUserToResizeRows = false;
             this.tabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.tabla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla.GridColor = System.Drawing.SystemColors.Control;
             this.tabla.Location = new System.Drawing.Point(12, 90);
             this.tabla.Name = "tabla";
+            this.tabla.ReadOnly = true;
+            this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(1334, 348);
             this.tabla.TabIndex = 1;
             // 

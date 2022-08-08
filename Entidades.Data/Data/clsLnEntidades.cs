@@ -6,33 +6,34 @@ using Entidades.capas.Data;
 
 public class clsLnEntidades {
 
-		public void Cargar(ref clsBeEntidades oBeEntidades, DataRow dr) {
+		public clsBeEntidades Cargar( DataRow dr) {
 		try
 		{
-
-			//oBeEntidades.IdEntidad = Convert.ToInt32(dr["IdEntidad"].ToString());
-			//oBeEntidades.Descripcion = String.IsNullOrEmpty(dr["Descripcion"].ToString()) == true ? "" : dr["Descripcion"].ToString();
-			//oBeEntidades.Direccion = String.IsNullOrEmpty(dr["Direccion"].ToString()) == true ? "" : dr["Direccion"].ToString();
-			//oBeEntidades.Localidad = String.IsNullOrEmpty(dr["Localidad"].ToString()) == true ? "" : dr["Localidad"].ToString();
-			//oBeEntidades.TipoEntidad = String.IsNullOrEmpty(dr["TipoEntidad"].ToString()) == true ? "" : dr["TipoEntidad"].ToString();
-			//oBeEntidades.TipoDocumento = String.IsNullOrEmpty(dr["TipoDocumento"].ToString()) == true ? "" : dr["TipoDocumento"].ToString();
-			//oBeEntidades.NumeroDocumento = Convert.ToInt32(dr["NumeroDocumento"].ToString());
-			//oBeEntidades.Teléfonos = String.IsNullOrEmpty(dr["Teléfonos"].ToString()) == true ? "" : dr["Teléfonos"].ToString();
-			//oBeEntidades.URLPaginaWeb = String.IsNullOrEmpty(dr["URLPaginaWeb"].ToString()) == true ? "" : dr["URLPaginaWeb"].ToString();
-			//oBeEntidades.URLFacebook = String.IsNullOrEmpty(dr["URLFacebook"].ToString()) == true ? "" : dr["URLFacebook"].ToString();
-			//oBeEntidades.URLInstagram = String.IsNullOrEmpty(dr["URLInstagram"].ToString()) == true ? "" : dr["URLInstagram"].ToString();
-			//oBeEntidades.URLTwitter = String.IsNullOrEmpty(dr["URLTwitter"].ToString()) == true ? "" : dr["URLTwitter"].ToString();
-			//oBeEntidades.URLTikTok = String.IsNullOrEmpty(dr["URLTikTok"].ToString()) == true ? "" : dr["URLTikTok"].ToString();
-			//oBeEntidades.CodigoPostal = String.IsNullOrEmpty(dr["CodigoPostal"].ToString()) == true ? "" : dr["CodigoPostal"].ToString();
-			//oBeEntidades.CoordenadasGPS = String.IsNullOrEmpty(dr["CoordenadasGPS"].ToString()) == true ? "" : dr["CoordenadasGPS"].ToString();
-			//oBeEntidades.LimiteCredito = Convert.ToInt32(dr["LimiteCredito"].ToString());
-			//oBeEntidades.UserNameEntidad = String.IsNullOrEmpty(dr["UserNameEntidad"].ToString()) == true ? "" : dr["UserNameEntidad"].ToString();
+			clsBeEntidades oBeEntidades = new clsBeEntidades();
+			oBeEntidades.IdEntidad = String.IsNullOrEmpty(dr["IdEntidad"].ToString()) == true ? "" : dr["IdEntidad"].ToString();
+			oBeEntidades.Descripcion = String.IsNullOrEmpty(dr["Descripcion"].ToString()) == true ? "" : dr["Descripcion"].ToString();
+			oBeEntidades.Direccion = String.IsNullOrEmpty(dr["Direccion"].ToString()) == true ? "" : dr["Direccion"].ToString();
+			oBeEntidades.Localidad = String.IsNullOrEmpty(dr["Localidad"].ToString()) == true ? "" : dr["Localidad"].ToString();
+			oBeEntidades.TipoEntidad = String.IsNullOrEmpty(dr["TipoEntidad"].ToString()) == true ? "" : dr["TipoEntidad"].ToString();
+			oBeEntidades.TipoDocumento = String.IsNullOrEmpty(dr["TipoDocumento"].ToString()) == true ? "" : dr["TipoDocumento"].ToString();
+			oBeEntidades.NumeroDocumento = String.IsNullOrEmpty(dr["NumeroDocumento"].ToString()) == true ? "" : dr["NumeroDocumento"].ToString();
+			oBeEntidades.Teléfonos = String.IsNullOrEmpty(dr["Teléfonos"].ToString()) == true ? "" : dr["Teléfonos"].ToString();
+			oBeEntidades.URLPaginaWeb = String.IsNullOrEmpty(dr["URLPaginaWeb"].ToString()) == true ? "" : dr["URLPaginaWeb"].ToString();
+			oBeEntidades.URLFacebook = String.IsNullOrEmpty(dr["URLFacebook"].ToString()) == true ? "" : dr["URLFacebook"].ToString();
+			oBeEntidades.URLInstagram = String.IsNullOrEmpty(dr["URLInstagram"].ToString()) == true ? "" : dr["URLInstagram"].ToString();
+			oBeEntidades.URLTwitter = String.IsNullOrEmpty(dr["URLTwitter"].ToString()) == true ? "" : dr["URLTwitter"].ToString();
+			oBeEntidades.URLTikTok = String.IsNullOrEmpty(dr["URLTikTok"].ToString()) == true ? "" : dr["URLTikTok"].ToString();
+			oBeEntidades.CodigoPostal = String.IsNullOrEmpty(dr["CodigoPostal"].ToString()) == true ? "" : dr["CodigoPostal"].ToString();
+			oBeEntidades.CoordenadasGPS = String.IsNullOrEmpty(dr["CoordenadasGPS"].ToString()) == true ? "" : dr["CoordenadasGPS"].ToString();
+			oBeEntidades.LimiteCredito = String.IsNullOrEmpty(dr["LimiteCredito"].ToString()) == true ? "" : dr["LimiteCredito"].ToString();
+			oBeEntidades.UserNameEntidad = String.IsNullOrEmpty(dr["UserNameEntidad"].ToString()) == true ? "" : dr["UserNameEntidad"].ToString();
 			oBeEntidades.PassworEntidad = String.IsNullOrEmpty(dr["PassworEntidad"].ToString()) == true ? "" : dr["PassworEntidad"].ToString();
 			oBeEntidades.RolUserEntidad = String.IsNullOrEmpty(dr["RolUserEntidad"].ToString()) == true ? "" : dr["RolUserEntidad"].ToString();
-			//oBeEntidades.Comentario = String.IsNullOrEmpty(dr["Comentario"].ToString()) == true ? "" : dr["Comentario"].ToString();
-			//oBeEntidades.Estatus = String.IsNullOrEmpty(dr["Estatus"].ToString()) == true ? "" : dr["Estatus"].ToString();
-			//oBeEntidades.NoEliminable = Convert.ToBoolean(dr["NoEliminable"]);
-			//oBeEntidades.FechaRegistro = String.IsNullOrEmpty(dr["FechaRegistro"].ToString()) == true ? "" : dr["FechaRegistro"].ToString();
+			oBeEntidades.Comentario = String.IsNullOrEmpty(dr["Comentario"].ToString()) == true ? "" : dr["Comentario"].ToString();
+			oBeEntidades.Estatus = String.IsNullOrEmpty(dr["Estatus"].ToString()) == true ? "" : dr["Estatus"].ToString();
+			oBeEntidades.NoEliminable = Convert.ToInt32(dr["NoEliminable"]);
+			oBeEntidades.FechaRegistro = String.IsNullOrEmpty(dr["FechaRegistro"].ToString()) == true ? "" : dr["FechaRegistro"].ToString();
+			return oBeEntidades;
 		}
 		catch (Exception ex)
 		{
@@ -194,9 +195,9 @@ public class clsLnEntidades {
 
 					DataTable dt = new DataTable();
 					dad.Fill(dt);
-			
+
 					if ((dt.Rows.Count == 1)) {
-						Cargar(ref oBeEntidades, dt.Rows[0]); 
+						Cargar( dt.Rows[0]); 
 					}
 					else {
 						throw new Exception("No se pudo obtener el registro");
@@ -210,7 +211,44 @@ public class clsLnEntidades {
 			throw ex;
 			
 		}
-			} 
+			}
 
 
+	public clsBeEntidades UsuarioConectado(String usuario)
+	{
+		clsBeEntidades validacion;
+		try
+		{
+			string sp = "SpUsuarioConectado";
+
+
+			SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
+			SqlCommand cmd = new SqlCommand(sp, cnn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlDataAdapter dad = new SqlDataAdapter(cmd);
+			dad.SelectCommand.Parameters.Add(new SqlParameter("@UserNameEntidad", usuario));
+
+			DataTable dt = new DataTable();
+			dad.Fill(dt);
+
+			if ((dt.Rows.Count == 1))
+			{
+				validacion = Cargar(dt.Rows[0]);
+
+			}
+			else
+			{
+				throw new Exception("No se pudo obtener el registro");
+			}
+
+			return validacion;
+
+		}
+		catch (Exception ex)
+		{
+			throw ex;
+		}
+
+	}
 }

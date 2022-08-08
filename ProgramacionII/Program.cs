@@ -17,7 +17,7 @@ namespace Entidades.capas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Crud());
+            Application.Run(new loggin());
         }
     }
 }

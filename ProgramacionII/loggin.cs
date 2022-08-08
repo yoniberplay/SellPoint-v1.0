@@ -27,9 +27,7 @@ namespace ProgramacionII
         }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // Almacenamiento del método encargado de verificar las credenciales
-            //bool isAuthenticated = loginService.ValidateAuth(txtUsername.Text, txtPassword.Text);
-            //UserName = txtUsername.Text;
+            
 
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
@@ -46,7 +44,7 @@ namespace ProgramacionII
 
                 if(clsLnEntidades.Obtener(ref em))
                 {
-                    new MenuPrincipal().Show();
+                    new MenuPrincipal(em.UserNameEntidad).Show();
                     this.Hide();
                 }
                 else
