@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabla = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,11 +45,18 @@
             this.tabla.AllowUserToDeleteRows = false;
             this.tabla.AllowUserToResizeColumns = false;
             this.tabla.AllowUserToResizeRows = false;
-            this.tabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabla.BackgroundColor = System.Drawing.SystemColors.Window;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla.GridColor = System.Drawing.SystemColors.Control;
+            this.tabla.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabla.Location = new System.Drawing.Point(12, 90);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;

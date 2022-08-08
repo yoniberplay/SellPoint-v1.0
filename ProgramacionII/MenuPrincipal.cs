@@ -20,9 +20,22 @@ namespace ProgramacionII
             InitializeComponent();
             clsLnEntidades cl = new clsLnEntidades();
             clsBeEntidades bc = cl.UsuarioConectado(usuario);
-            label1.Text = bc.UserNameEntidad;
-            label2.Text = bc.Localidad;
-            labelstatus.Text = bc.UserNameEntidad +" Conectado.  "+ DateTime.Now.ToString("h:mm:ss dd/MM/yyyy"); 
+           //
+            labelstatus.Text = " Conectado.  "+ DateTime.Now.ToString("h:mm dd/MM/yyyy");
+            textBoxnumerodocumento.Text = bc.NumeroDocumento;
+            textBoxdireccion.Text = bc.Direccion;
+            textBoxestadoentidad.Text = bc.Estatus;
+            textBoxestadoentidad.ForeColor = System.Drawing.Color.Lime;
+            textBoxlocalidad.Text = bc.Localidad;
+            textBoxnodocumento.Text = bc.NumeroDocumento;
+            textBoxtelefono.Text = bc.Teléfonos;
+            textBoxtipodocumento.Text = bc.TipoDocumento;
+            textBoxtipoentidad.Text = bc.TipoEntidad;
+            textBoxusername.Text = bc.UserNameEntidad;
+            textBoxroluser.Text = bc.RolUserEntidad;
+            //labelrol.Text = bc.RolUserEntidad;
+            //labelusername.Text = bc.UserNameEntidad;
+
 
 
         }
@@ -117,6 +130,11 @@ namespace ProgramacionII
             Crud crud = new Crud();
             crud.MdiParent = this;
             crud.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
