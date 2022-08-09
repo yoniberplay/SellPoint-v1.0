@@ -74,5 +74,37 @@ namespace ProgramacionII
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void loggin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                MessageBox.Show("asdf");
+            }
+        }
+
+        private void loggin_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            if (e.KeyChar == (char)13)
+            {
+                btnIngresar_Click(sender,e);
+            }
+        
+    }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnIngresar_Click(sender, e);
+            }
+        }
     }
 }

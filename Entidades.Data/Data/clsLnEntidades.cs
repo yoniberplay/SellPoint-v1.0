@@ -107,7 +107,7 @@ public class clsLnEntidades {
 					cmd.Parameters.Add(new SqlParameter("@LOCALIDAD", oBeEntidades.Localidad));
 					cmd.Parameters.Add(new SqlParameter("@TIPOENTIDAD", oBeEntidades.TipoEntidad));
 					cmd.Parameters.Add(new SqlParameter("@TIPODOCUMENTO", oBeEntidades.TipoDocumento));
-					cmd.Parameters.Add(new SqlParameter("@NUMERODOCUMENTO", oBeEntidades.NumeroDocumento));
+					cmd.Parameters.Add(new SqlParameter("@NUMERODOCUMENTO", oBeEntidades.NumeroDocumento.ToString()));
 					cmd.Parameters.Add(new SqlParameter("@TELÉFONOS", oBeEntidades.Teléfonos));
 					cmd.Parameters.Add(new SqlParameter("@URLPAGINAWEB", oBeEntidades.URLPaginaWeb));
 					cmd.Parameters.Add(new SqlParameter("@URLFACEBOOK", oBeEntidades.URLFacebook));
@@ -167,7 +167,7 @@ public class clsLnEntidades {
 					SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
 					SqlCommand cmd = new SqlCommand(sp, cnn);
 					cmd.CommandType = CommandType.StoredProcedure;
-			
+
 					SqlDataAdapter dad = new SqlDataAdapter(cmd);
 			
 					DataTable dt = new DataTable();
@@ -181,7 +181,46 @@ public class clsLnEntidades {
 				}
 			}
 
-			public bool Obtener(ref clsBeEntidades oBeEntidades) {
+
+			public DataTable Busqueda(String temp)
+			{
+					DataTable dt = new DataTable();
+					try
+				{
+					string sp = "SpEntidadesBuscar";
+
+					SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
+					SqlCommand cmd = new SqlCommand(sp, cnn);
+					cmd.CommandType = CommandType.StoredProcedure;
+
+					SqlDataAdapter dad = new SqlDataAdapter(cmd);
+					dad.SelectCommand.Parameters.Add(new SqlParameter("@username", temp));
+					
+
+					
+					dad.Fill(dt);
+
+					if ((dt.Rows.Count == 1))
+					{
+				
+					}
+					else
+					{
+						throw new Exception("No se pudo obtener el registro");
+					}
+
+
+			return dt;
+
+				}
+				catch (Exception ex)
+				{
+					return dt;
+					throw ex;
+				}
+			}
+
+	public bool Obtener(ref clsBeEntidades oBeEntidades) {
 				try {
 					string sp = "SP_loggin";
 			

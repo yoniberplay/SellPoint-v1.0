@@ -21,7 +21,7 @@ namespace ProgramacionII
             clsLnEntidades cl = new clsLnEntidades();
             clsBeEntidades bc = cl.UsuarioConectado(usuario);
            //
-            labelstatus.Text = " Conectado.  "+ DateTime.Now.ToString("h:mm dd/MM/yyyy");
+            labelstatus.Text = " Conectado.  "+ DateTime.Now.ToString("h:mm tt dd/MM/yyyy");
             textBoxnumerodocumento.Text = bc.NumeroDocumento;
             textBoxdireccion.Text = bc.Direccion;
             textBoxestadoentidad.Text = bc.Estatus;
@@ -135,6 +135,22 @@ namespace ProgramacionII
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new loggin().Show();
+            this.Hide();
         }
     }
 }

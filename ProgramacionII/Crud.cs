@@ -15,8 +15,8 @@ namespace ProgramacionII
     public partial class Crud : Form
     {   
 
-        clsBeEntidades Entity = new clsBeEntidades();  
-        clsLnEntidades data = new clsLnEntidades(); 
+        //clsBeEntidades Entity = new clsBeEntidades();  
+        //clsLnEntidades data = new clsLnEntidades(); 
 
 
 
@@ -49,7 +49,7 @@ namespace ProgramacionII
         {
             MantenimientoEntidades me = new MantenimientoEntidades();
             me.button1.Text = "Actualizar";
-            
+            me.Text = "Actualizar Entidad";
             me.identidad = tabla.CurrentRow.Cells[0].Value.ToString();
             me.textBoxdescripcion.Text = tabla.CurrentRow.Cells[1].Value.ToString();
             me.textBoxdireccion.Text = tabla.CurrentRow.Cells[2].Value.ToString();
@@ -88,6 +88,26 @@ namespace ProgramacionII
             String id = tabla.CurrentRow.Cells[0].Value.ToString();
             new clsLnEntidades().Eliminar(ref id);
 
+            ListarEntidades();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(textBoxbusqueda.Text.Length == 0)
+            {
+                MessageBox.Show("Debe introducir el username del usuario que deseea buscar.");
+            }
+            else
+            {
+                var data = new clsLnEntidades();
+                tabla.DataSource = data.Busqueda(textBoxbusqueda.Text);
+                textBoxbusqueda.Text = "";
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
             ListarEntidades();
         }
     }
