@@ -61,5 +61,12 @@ namespace ProgramacionII
             new loggin().Show();
             this.Hide();
         }
+
+        private void aCercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Acercade a = new Acercade();
+            a.MdiParent = this;
+            a.Show();   
+        }
     }
 }

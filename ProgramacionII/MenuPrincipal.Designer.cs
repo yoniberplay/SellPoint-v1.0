@@ -91,7 +91,7 @@
             // 
             this.entidadesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             this.entidadesToolStripMenuItem.Click += new System.EventHandler(this.entidadesToolStripMenuItem_Click);
             // 
@@ -113,6 +113,7 @@
             this.aCercaDeToolStripMenuItem.Name = "aCercaDeToolStripMenuItem";
             this.aCercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aCercaDeToolStripMenuItem.Text = "Acerca de...";
+            this.aCercaDeToolStripMenuItem.Click += new System.EventHandler(this.aCercaDeToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
