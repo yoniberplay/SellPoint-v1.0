@@ -137,9 +137,9 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades.Data\Entidades.Capas.csproj">
+    <ProjectReference Include="..\Entidades.Data\Entidades.Negocio.csproj">
       <Project>{f3a070d2-b882-43bc-a60f-09772d2b1171}</Project>
-      <Name>Entidades.Capas</Name>
+      <Name>Entidades.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

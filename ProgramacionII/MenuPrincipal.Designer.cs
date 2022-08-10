@@ -89,9 +89,9 @@
             // 
             // entidadesToolStripMenuItem
             // 
-            this.entidadesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.entidadesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             this.entidadesToolStripMenuItem.Click += new System.EventHandler(this.entidadesToolStripMenuItem_Click);
             // 
@@ -109,24 +109,24 @@
             // 
             // aCercaDeToolStripMenuItem
             // 
-            this.aCercaDeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.aCercaDeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.aCercaDeToolStripMenuItem.Name = "aCercaDeToolStripMenuItem";
-            this.aCercaDeToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.aCercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aCercaDeToolStripMenuItem.Text = "Acerca de...";
             // 
             // loginToolStripMenuItem
             // 
-            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
