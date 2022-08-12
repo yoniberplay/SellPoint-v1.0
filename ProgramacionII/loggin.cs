@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades.capas;
 using Entidades.capas.Data.Models;
 
 namespace ProgramacionII
@@ -44,14 +45,19 @@ namespace ProgramacionII
 
                 if(clsLnEntidades.Obtener(ref em))
                 {
-                    new MenuPrincipal(em.UserNameEntidad).Show();
-                    this.Hide();
+                    //new MenuPrincipal(em.UserNameEntidad).Show();
+                    //this.Hide();
+                    Program.validateloggin = true;
+                    Program.username = txtUsername.Text;
+                    this.Dispose();
                 }
                 else
                 {
-                    MantenimientoEntidades mantenimiento = new MantenimientoEntidades(txtUsername.Text, txtPassword.Text);
-                    mantenimiento.Show();
-                    this.Hide();
+                    Program.addclave = txtPassword.Text;
+                    Program.addusername = txtUsername.Text;
+                   // MantenimientoEntidades mantenimiento = new MantenimientoEntidades(txtUsername.Text, txtPassword.Text);
+                   //mantenimiento.Show();
+                    this.Dispose();
                     //MessageBox.Show("Datos incorrectos.");
                 }
 

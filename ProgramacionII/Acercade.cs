@@ -31,5 +31,10 @@ namespace ProgramacionII
             Process.Start(e.Link.LinkData as string);
 
         }
+
+        private void Acercade_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

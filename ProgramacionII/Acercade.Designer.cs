@@ -131,6 +131,7 @@
             this.Name = "Acercade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Desarrolado Por:";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Acercade_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

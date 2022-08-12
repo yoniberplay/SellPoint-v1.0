@@ -164,6 +164,7 @@
             this.Name = "Crud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Configuracion Entidades";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Crud_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

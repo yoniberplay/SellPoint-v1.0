@@ -563,6 +563,7 @@
             this.Name = "MantenimientoEntidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Entidad";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MantenimientoEntidades_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

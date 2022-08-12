@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades.capas.Data.Models;
 using Entidades.capas.Data;
+using Entidades.capas;
 
 namespace ProgramacionII
 {
@@ -51,15 +52,16 @@ namespace ProgramacionII
             cond = validar();
             if (cond)
             {
-                this.Hide();
-                new loggin().Show();
+                this.Dispose();
+                Program.entidadagregada = true;
+                ///new loggin().Show();
             }
             }else if(button1.Text == "Actualizar")
             {
                 cond = validar();
                 if (cond)
                 {
-                    this.Hide();
+                    this.Dispose();
                     
                 }
             }
@@ -169,6 +171,9 @@ namespace ProgramacionII
             }
         }
 
-        
+        private void MantenimientoEntidades_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

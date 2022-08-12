@@ -39,7 +39,7 @@ namespace ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             MantenimientoEntidades me = new MantenimientoEntidades();
             me.Show();
 
@@ -109,6 +109,11 @@ namespace ProgramacionII
         private void button6_Click(object sender, EventArgs e)
         {
             ListarEntidades();
+        }
+
+        private void Crud_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose(); 
         }
     }
 }

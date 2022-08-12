@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,8 +38,8 @@
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.statusbar = new System.Windows.Forms.ToolStripProgressBar();
             this.labelstatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusbar2 = new System.Windows.Forms.ToolStripProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxroluser = new System.Windows.Forms.TextBox();
             this.textBoxusername = new System.Windows.Forms.TextBox();
@@ -59,6 +60,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxestadoentidad = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,7 +94,7 @@
             // 
             this.entidadesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             this.entidadesToolStripMenuItem.Click += new System.EventHandler(this.entidadesToolStripMenuItem_Click);
             // 
@@ -133,33 +136,39 @@
             // 
             // statusStrip
             // 
+            this.statusStrip.AllowItemReorder = true;
             this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusbar,
+            this.statusbar2,
+            this.toolStripStatusLabel1,
             this.labelstatus});
             this.statusStrip.Location = new System.Drawing.Point(0, 510);
             this.statusStrip.Name = "statusStrip";
+            this.statusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.statusStrip.Size = new System.Drawing.Size(1206, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
-            // 
-            // statusbar
-            // 
-            this.statusbar.ForeColor = System.Drawing.Color.Lime;
-            this.statusbar.MarqueeAnimationSpeed = 5;
-            this.statusbar.Name = "statusbar";
-            this.statusbar.Size = new System.Drawing.Size(100, 16);
-            this.statusbar.Step = 1;
-            this.statusbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.statusbar.Value = 100;
             // 
             // labelstatus
             // 
             this.labelstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.labelstatus.Margin = new System.Windows.Forms.Padding(725, 3, 0, 2);
             this.labelstatus.Name = "labelstatus";
-            this.labelstatus.Size = new System.Drawing.Size(86, 17);
-            this.labelstatus.Text = "Conectado.";
+            this.labelstatus.Size = new System.Drawing.Size(45, 17);
+            this.labelstatus.Text = "fecha";
+            this.labelstatus.Click += new System.EventHandler(this.labelstatus_Click);
+            // 
+            // statusbar2
+            // 
+            this.statusbar2.ForeColor = System.Drawing.Color.Lime;
+            this.statusbar2.MarqueeAnimationSpeed = 5;
+            this.statusbar2.Name = "statusbar2";
+            this.statusbar2.Size = new System.Drawing.Size(100, 16);
+            this.statusbar2.Step = 1;
+            this.statusbar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.statusbar2.Value = 100;
             // 
             // panel1
             // 
@@ -429,6 +438,18 @@
             this.textBoxestadoentidad.TabStop = false;
             this.textBoxestadoentidad.Text = "cedula";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(86, 17);
+            this.toolStripStatusLabel1.Text = "Conectado.";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,6 +467,8 @@
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -462,7 +485,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripProgressBar statusbar;
+        private System.Windows.Forms.ToolStripProgressBar statusbar2;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
@@ -490,6 +513,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxroluser;
         private System.Windows.Forms.TextBox textBoxusername;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
