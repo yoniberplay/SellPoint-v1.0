@@ -20,6 +20,7 @@ namespace Entidades.capas
         public static bool salidaMenuPrincipal = true;
         public static bool loggindesdemenuprincipal;
         public static bool entidadagregada;
+        public static bool registroprimeravez;
         public static String username;
         public static String addusername;
         public static String addclave;
@@ -34,11 +35,20 @@ namespace Entidades.capas
 
            //Se abre el telon.
            Application.Run(new Splash());
-           Application.Run(new loggin());
+            
+            if (clsLnEntidades.PrimeraVez())
+            {
+                Application.Run(new MantenimientoEntidades());
 
+                            }
+           else
+            {
+                Application.Run(new loggin());
+            }
+            
             while (salidaMenuPrincipal)
             {
-               // Application.Run(new loggin());
+              
                 if (validateloggin) {
 
                     validateloggin = false;
@@ -48,7 +58,17 @@ namespace Entidades.capas
                     {
                         loggindesdemenuprincipal = false;
                         Application.Run(new loggin());
-                    }//AGREGAR AQUI LA CONDICION SI AGREGA OTRA ENTIDAD.
+                    }
+                    if (entidadagregada)
+                    {
+                        entidadagregada = false;
+                        Application.Run(new loggin());
+                    }
+                        
+                }else if (registroprimeravez)
+                {
+                    registroprimeravez = false;
+                    Application.Run(new loggin());
                 }
                 else
                 {
@@ -57,9 +77,9 @@ namespace Entidades.capas
                     {
                         entidadagregada = false;
                         Application.Run(new loggin());
-                    }
-                    break;
 
+                    }
+                    else break;
                 }
                 
             }

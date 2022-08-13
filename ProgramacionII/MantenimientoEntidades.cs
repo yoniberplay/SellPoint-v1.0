@@ -54,7 +54,7 @@ namespace ProgramacionII
             {
                 this.Dispose();
                 Program.entidadagregada = true;
-                ///new loggin().Show();
+                
             }
             }else if(button1.Text == "Actualizar")
             {

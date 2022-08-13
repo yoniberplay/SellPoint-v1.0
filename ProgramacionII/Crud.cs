@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades.capas;
 using Entidades.capas.Data;
 using Entidades.capas.Data.Models;
 
@@ -39,9 +40,15 @@ namespace ProgramacionII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            //this.Dispose();
             MantenimientoEntidades me = new MantenimientoEntidades();
-            me.Show();
+            me.ShowDialog();
+                
+            if (Program.entidadagregada)
+            {
+                Program.entidadagregada = false;
+                ListarEntidades();
+            }
 
         }
 

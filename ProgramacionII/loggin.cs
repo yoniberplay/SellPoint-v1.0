@@ -45,20 +45,14 @@ namespace ProgramacionII
 
                 if(clsLnEntidades.Obtener(ref em))
                 {
-                    //new MenuPrincipal(em.UserNameEntidad).Show();
-                    //this.Hide();
+                   
                     Program.validateloggin = true;
                     Program.username = txtUsername.Text;
                     this.Dispose();
                 }
                 else
                 {
-                    Program.addclave = txtPassword.Text;
-                    Program.addusername = txtUsername.Text;
-                   // MantenimientoEntidades mantenimiento = new MantenimientoEntidades(txtUsername.Text, txtPassword.Text);
-                   //mantenimiento.Show();
-                    this.Dispose();
-                    //MessageBox.Show("Datos incorrectos.");
+                    DialogResult result = MessageBox.Show("Su usuario o clave son incorrectos.", "Datos incorrectos.", MessageBoxButtons.OK);
                 }
 
             }
@@ -67,8 +61,6 @@ namespace ProgramacionII
 
         }
 
-
-      
 
         private void label4_Click(object sender, EventArgs e)
         {

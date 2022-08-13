@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System;
 using Entidades.capas.Data;
+//using System.Windows.Forms;
 
 public class clsLnEntidades {
 
@@ -251,9 +252,40 @@ public class clsLnEntidades {
 			
 		}
 			}
+	public static bool PrimeraVez()
+	{
+
+		try
+		{
+			string sp = "SpEntidadesListar";
+
+			SqlConnection cnn = new SqlConnection(ConexionDB.stringconnection);
+			SqlCommand cmd = new SqlCommand(sp, cnn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlDataAdapter dad = new SqlDataAdapter(cmd);
+
+			DataTable dt = new DataTable();
+			dad.Fill(dt);
+
+			if ((dt.Rows.Count == 0))
+			{
+				//MessageBox.Show("Bienvenido, debe crear su usuario para poder continuar.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return true;
+			}
+			else return false;
+			
+
+		}
+		catch (Exception ex)
+		{
+			throw ex;
+		}
+					}
 
 
-	public clsBeEntidades UsuarioConectado(String usuario)
+
+		public clsBeEntidades UsuarioConectado(String usuario)
 	{
 		clsBeEntidades validacion;
 		try

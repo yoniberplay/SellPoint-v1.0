@@ -47,6 +47,7 @@ namespace ProgramacionII
             Crud crud = new Crud();
             crud.MdiParent = this;
             crud.Show();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
