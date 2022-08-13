@@ -27,7 +27,7 @@ Line, ejemplo: SqlConnection, SqlAdapter, SqlDataAdapter, DataTable o DataSet)
 ![image](https://user-images.githubusercontent.com/36041729/183981461-87836d0b-2059-4857-8a6e-c0dac3fec787.png)
 
 ### Menu Principal (mdi Container)
-![image](https://user-images.githubusercontent.com/36041729/183981564-26302c84-c744-4075-81f6-3e06d380ae06.png)
+![image](https://user-images.githubusercontent.com/36041729/184510985-77592ad8-8cb1-4b84-a916-202f9ed3e5c8.png)
 
 ### Configuracion Entidades (mdi child)
 ![image](https://user-images.githubusercontent.com/36041729/183981678-dd80de0a-17e7-4c7f-b98c-7f2e01f6e5c8.png)
